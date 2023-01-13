@@ -1,14 +1,12 @@
-import { Navbar } from "../Navbar/Navbar";
+import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 
 export const Layout = () => {
   return (
-    <div>
-      <header>
-        <Navbar />
-      </header>
+    <div className="bg-[url('./images/woods.jpg')] bg-no-repeat bg-cover ">
+      <Header />
       <main>
-        <h1>Holaaaa</h1>
+        <h1>main</h1>
       </main>
       <Footer />
     </div>
