@@ -3,12 +3,12 @@ import { Footer } from "../Footer/Footer";
 
 export const Layout = () => {
   return (
-    <div className="bg-[url('./images/woods.jpg')] bg-no-repeat bg-cover ">
+    <div className="bg-[url('./images/woods.jpg')] bg-no-repeat bg-cover h-screen">
       <Header />
-      <main>
+      {/* <main>
         <h1>main</h1>
-      </main>
-      <Footer />
+      </main> */}
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -34,7 +34,7 @@ const networks = [
 
 export const Header = () => {
   return (
-    <header className="w-screen h-12 bg-yellow-50 bg-opacity-30 shadow-outline flex items-center pl-2 justify-around">
+    <header className="w-screen h-12 bg-yellow-50 bg-opacity-40 shadow-outline flex items-center pl-2 justify-around font-medium ">
       <img
         className="h-2/3 hover:scale-110"
         src="./logos/HeroRealmsLogo.png"
