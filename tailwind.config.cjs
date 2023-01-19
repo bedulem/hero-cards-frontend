@@ -13,6 +13,9 @@ module.exports = {
           100: "#F8EDCE",
           DEFAULT: "#F8EDCE",
         },
+        "secondary-brown": {
+          100: "#C37B2A,",
+        },
       },
     },
   },

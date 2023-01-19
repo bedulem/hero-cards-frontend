@@ -34,7 +34,7 @@ const networks = [
 
 export const Header = () => {
   return (
-    <header className="w-screen h-12 bg-yellow-50 bg-opacity-40 shadow-outline flex items-center pl-2 justify-around font-medium ">
+    <header className="w-screen h-12 bg-principal-white-100 bg-opacity-40 shadow-outline flex items-center pl-2 justify-around font-medium ">
       <img
         className="h-2/3 hover:scale-110"
         src="./logos/HeroRealmsLogo.png"
@@ -45,7 +45,7 @@ export const Header = () => {
           {menu.map(({ name, href }) => (
             <li
               key={name}
-              className="hover:underline hover:underline-offset-4 hover:decoration-[#C37B2A] transition duration-75"
+              className="hover:underline hover:underline-offset-4 hover:decoration-principal-white-100 transition duration-75"
             >
               <Link to={href}>{name}</Link>
             </li>
