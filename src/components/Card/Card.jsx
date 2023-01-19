@@ -8,7 +8,7 @@ export function Card() {
       <div>
         <img src={imageFront} alt="" className="rounded-2xl max-h-96" />
       </div>
-      <div className="h-80 w-64 bg-[#2e617d] p-3">
+      <div className="h-[22rem]  w-64 bg-principal-300/95 bg p-3 shadow-stone-900 shadow-lg text-principal-white-100 rounded-r-lg">
         <strong>Name: </strong>
         <p>{name}</p>
         <strong>Type: </strong>
@@ -17,7 +17,7 @@ export function Card() {
         <p>{role}</p>
         <strong>Set: </strong>
         <p>{set}</p>
-        <strong>Extra: </strong>
+        <strong className="inline-block gap-y-2">Extra: </strong>
         <p>{text}</p>
       </div>
     </section>
