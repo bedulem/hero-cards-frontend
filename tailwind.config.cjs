@@ -15,6 +15,8 @@ module.exports = {
         },
         "secondary-brown": {
           100: "#C37B2A,",
+          200: "#a86a23",
+          300: "#82511a",
         },
       },
     },
