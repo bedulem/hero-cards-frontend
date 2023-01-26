@@ -21,10 +21,10 @@ export const BrowserCard = () => {
   }
 
   return (
-    <div className="flex flex-row justify-around items-center w-3/5 h-12 mt-8 bg-principal-white-100/70 rounded-md">
-      <form className="w-96" onSubmit={onSubmit}>
+    <div className="flex items-center w-3/5 h-12 mt-8 bg-principal-white-100/70 rounded-md">
+      <form className="w-full flex justify-around" onSubmit={onSubmit}>
         <input
-          className="mr-10 bg-principal-white-100/20 outline-none focus:border-transparent placeholder:text-sm placeholder:text-principal-white-100/50 caret-neutral-300 appearance-none"
+          className="bg-principal-white-100/20 outline-none focus:border-transparent placeholder:text-sm placeholder:text-principal-white-100/50 caret-neutral-300 appearance-none w-8/12"
           type="number"
           name=""
           id=""
@@ -32,7 +32,7 @@ export const BrowserCard = () => {
           value={valueInput}
         />
         <input
-          className="px-8 py-1 gap-x-4  text-principal-white-100 bg-secondary-brown-200 shadow-md shadow-secondary-brown-200/20 transition hover:bg-secondary-brown-300 hover:shadow-secondary-brown-200/50"
+          className="px-8 py-1 text-principal-white-100 bg-gradient-to-r from-secondary-brown-300 to-secondary-brown-100 shadow-md shadow-secondary-brown-200/30 transition hover:bg-gradient-to-r- hover:from-secondary-brown-400 hover:to-secondary-brown-400 hover:shadow-secondary-brown-200/50 border-b-[1px] border-secondary-brown-100"
           type="submit"
           value="Search"
         />
