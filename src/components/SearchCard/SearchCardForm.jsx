@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getCardById } from "../../services/cards";
 
-export const BrowserCard = () => {
+export const SearchCardForm = ({ handleSearch }) => {
   const [valueInput, setValueInput] = useState("");
 
   function handleChange(e) {
@@ -12,17 +12,18 @@ export const BrowserCard = () => {
   async function onSubmit(e) {
     e.preventDefault();
 
-    // if (value <= 0 || value >= 10000) {
-    //   return;
-    // }
+    if (e.target.value <= 0 || e.target.value >= 10000) {
+      return await getCardById(1);
+    }
     const result = await getCardById(Number(valueInput));
 
-    console.log(result);
+    handleSearch(result);
+    setValueInput("");
   }
 
   return (
-    <div className="flex items-center w-3/5 h-12 mt-8 bg-principal-white-100/70 rounded-md">
-      <form className="w-full flex justify-around" onSubmit={onSubmit}>
+    <div className="flex justify-around w-full">
+      <form className="w-full items-center flex" onSubmit={onSubmit}>
         <input
           className="bg-principal-white-100/20 outline-none focus:border-transparent placeholder:text-sm placeholder:text-principal-white-100/50 caret-neutral-300 appearance-none w-8/12"
           type="number"
