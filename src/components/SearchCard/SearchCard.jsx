@@ -22,7 +22,7 @@ const SearchCard = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center  h-12 mt-8 bg-principal-white-100/70 rounded-md">
+    <div className="flex flex-col h-12 mt-8 bg-principal-white-100/70 rounded-md">
       <SearchCardForm handleSearch={handleSearch} />
       <Card
         set={search.set}

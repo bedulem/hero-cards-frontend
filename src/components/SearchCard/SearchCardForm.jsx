@@ -22,10 +22,13 @@ export const SearchCardForm = ({ handleSearch }) => {
   }
 
   return (
-    <div className="flex justify-around w-full">
-      <form className="w-full items-center flex" onSubmit={onSubmit}>
+    <div className="w-full h-12">
+      <form
+        className="flex h-12 justify-around items-center"
+        onSubmit={onSubmit}
+      >
         <input
-          className="bg-principal-white-100/20 outline-none focus:border-transparent placeholder:text-sm placeholder:text-principal-white-100/50 caret-neutral-300 appearance-none w-8/12"
+          className="bg-principal-white-100/50 outline-none focus:border-transparent placeholder:text-sm placeholder:text-principal-white-100/50 caret-secondary-brown-100 appearance-none w-8/12 h-4/6 p-1 text-secondary-brown-100 transition hover:bg-gradient-to-r- hover:from-secondary-brown-400 hover:to-secondary-brown-400 hover:shadow-secondary-brown-400"
           type="number"
           name=""
           id=""

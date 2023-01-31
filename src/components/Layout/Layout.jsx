@@ -7,7 +7,7 @@ export const Layout = () => {
   return (
     <div className="bg-[url('./images/woods.jpg')] bg-no-repeat bg-cover h-screen">
       <Header />
-      <main className="flex flex-col  items-center">
+      <main className="flex flex-col items-center">
         <SearchCard />
         <Card />
       </main>
