@@ -6,8 +6,8 @@ const menu = [
     href: "/example",
   },
   {
-    name: "Clans",
-    href: "/example",
+    name: "Search",
+    href: "/search",
   },
   {
     name: "Roadmap",
@@ -35,11 +35,16 @@ const networks = [
 export const Header = () => {
   return (
     <header className="w-screen h-12 bg-principal-white-100 bg-opacity-40 shadow-outline flex items-center pl-2 justify-around font-medium ">
-      <img
-        className="h-2/3 hover:scale-110"
-        src="./logos/HeroRealmsLogo.png"
-        alt="logo Hero Realms"
-      />
+      <Link
+        to={"/"}
+        className="hover:scale-110 hover:cursor-pointer transition"
+      >
+        <img
+          className="w-20"
+          src="./logos/HeroRealmsLogo.png"
+          alt="logo Hero Realms"
+        />
+      </Link>
       <nav className="flex felx-row gap-6">
         <ul className="flex flex-row gap-4 text-xs ">
           {menu.map(({ name, href }) => (
