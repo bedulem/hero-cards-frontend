@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getCardById } from "../../services/cards";
+import Button from "../Button/Button";
 
 export const SearchCardForm = ({ handleSearch }) => {
   const [valueInput, setValueInput] = useState("");
@@ -35,11 +36,7 @@ export const SearchCardForm = ({ handleSearch }) => {
           onChange={handleChange}
           value={valueInput}
         />
-        <input
-          className="px-8 py-1 text-principal-white-100 bg-gradient-to-r from-secondary-brown-300 to-secondary-brown-100 shadow-md shadow-secondary-brown-200/30 transition hover:bg-gradient-to-r- hover:from-secondary-brown-400 hover:to-secondary-brown-400 hover:shadow-secondary-brown-200/50 border-b-[1px] border-secondary-brown-100"
-          type="submit"
-          value="Search"
-        />
+        <Button type="submit" value="Search" />
       </form>
     </div>
   );
