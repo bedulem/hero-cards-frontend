@@ -12,11 +12,11 @@ export const SearchCardForm = ({ handleSearch }) => {
 
   async function onSubmit(e) {
     e.preventDefault();
-
-    if (e.target.value <= 0 || e.target.value >= 10000) {
-      return await getCardById(1);
-    }
-    const result = await getCardById(Number(valueInput));
+    const value = Number(e.target[0].value);
+    let result =
+      value <= 0 || value >= 600
+        ? await getCardById(1)
+        : await getCardById(Number(valueInput));
 
     handleSearch(result);
     setValueInput("");
