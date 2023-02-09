@@ -22,16 +22,35 @@ const SearchCard = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-12 mt-8 bg-principal-white-100/70 rounded-md">
-      <SearchCardForm handleSearch={handleSearch} />
-      <Card
-        set={search.set}
-        name={search.name}
-        text={search.text}
-        type={search.type}
-        role={search.role}
-        imageFront={search.imageFront}
-      />
+    <div className="flex flex-col items-center">
+      <div className="flex  mt-8 w-[500px] bg-principal-white-100/70 rounded-md">
+        <SearchCardForm handleSearch={handleSearch} />
+      </div>
+      {console.log(Array.isArray(search))}
+      {Array.isArray(search) ? (
+        <div className="grid grid-cols-4  justify-around">
+          {search.map((el) => (
+            <Card
+              key={el.id}
+              set={el.set}
+              name={el.name}
+              text={el.text}
+              type={el.type}
+              role={el.role}
+              imageFront={el.imageFront}
+            />
+          ))}
+        </div>
+      ) : (
+        <Card
+          set={search.set}
+          name={search.name}
+          text={search.text}
+          type={search.type}
+          role={search.role}
+          imageFront={search.imageFront}
+        />
+      )}
     </div>
   );
 };
