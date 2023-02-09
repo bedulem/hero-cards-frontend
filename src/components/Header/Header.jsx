@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const menu = [
   {
-    name: "Metaverse",
-    href: "/example",
+    name: "About",
+    href: "/",
   },
   {
     name: "Search",
@@ -11,11 +11,11 @@ const menu = [
   },
   {
     name: "Roadmap",
-    href: "/example",
+    href: "/",
   },
   {
-    name: "Team",
-    href: "/example",
+    name: "History",
+    href: "/",
   },
 ];
 
