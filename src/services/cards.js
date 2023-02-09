@@ -21,3 +21,14 @@ export const getCardById = async (cardId) => {
     return [];
   }
 };
+
+export const getCardByName = async (name) => {
+  try {
+    const response = await fetch(`${apiURL}/api/herocards/${name}`);
+    const card = await response.json();
+    return card;
+  } catch (e) {
+    // enviar el error a un servicio de reporte de errores
+    return [];
+  }
+};
