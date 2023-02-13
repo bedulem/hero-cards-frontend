@@ -1,61 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "../Card/Card";
-import Slider from "react-slick";
-import "./slick.css";
-import "./slick-theme.css";
+import Button from "../Button/Button";
 
-const Carousel = ({ data }) => {
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: true,
-    autoplay: false,
+const Carousel = ({ data = [] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? data.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
   };
-  // responsive: [
-  //   {
-  //     breakpoint: 1024,
-  //     settings: {
-  //       slidesToShow: 2,
-  //       slidesToScroll: 2,
-  //       infinite: true,
-  //       dots: true,
-  //     },
-  //   },
-  //   {
-  //     breakpoint: 600,
-  //     settings: {
-  //       slidesToShow: 2,
-  //       slidesToScroll: 2,
-  //       initialSlide: 2,
-  //     },
-  //   },
-  //   {
-  //     breakpoint: 480,
-  //     settings: {
-  //       slidesToShow: 1,
-  //       slidesToScroll: 1,
-  //     },
-  //   },
-  // ],
-  // };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === data.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
 
   return (
-    <Slider>
-      {data.map((el) => (
-        <Card
-          key={el.id}
-          set={el.set}
-          name={el.name}
-          text={el.text}
-          type={el.type}
-          role={el.role}
-          imageFront={el.imageFront}
-        />
-      ))}
-    </Slider>
+    <div className="max-w-[1400px] h-[580px] w-full m-auto py-4 px-4 relative group ">
+      {data.length >= 1 ? (
+        <>
+          <Card
+            key={data[currentIndex].id}
+            set={data[currentIndex].set}
+            name={data[currentIndex].name}
+            text={data[currentIndex].text}
+            type={data[currentIndex].type}
+            role={data[currentIndex].role}
+            imageFront={data[currentIndex].imageFront}
+          />
+          {/* Left Arrow */}
+          <div
+            className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5"
+            onClick={prevSlide}
+          >
+            <Button value={"<"} />
+          </div>
+          {/* Right Arrow */}
+          <div
+            className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 "
+            onClick={nextSlide}
+          >
+            <Button value={">"} />
+          </div>
+          <div className="flex top-4 justify-center py-2">
+            {data.map((data, slideIndex) => (
+              <div
+                key={slideIndex}
+                onClick={() => goToSlide(slideIndex)}
+                className="text-2xl cursor-pointer"
+              >
+                {
+                  <div className="w-2 h-2 rounded-full bg-principal-white-100 m-1" />
+                }
+              </div>
+            ))}
+          </div>
+        </>
+      ) : (
+        ""
+      )}
+    </div>
   );
 };
 
