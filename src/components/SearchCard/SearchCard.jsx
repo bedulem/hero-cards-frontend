@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SearchCardForm } from "./SearchCardForm";
 import { Card } from "../Card/Card";
 import { getCardById } from "../../services/cards";
+import Carousel from "../Carousel/Carousel";
 
 const DEFAULT_FIRST_CARD = 1;
 
@@ -28,20 +29,21 @@ const SearchCard = () => {
       </div>
       {console.log(Array.isArray(search))}
       {Array.isArray(search) ? (
-        <div className="grid grid-cols-4  justify-around">
-          {search.map((el) => (
-            <Card
-              key={el.id}
-              set={el.set}
-              name={el.name}
-              text={el.text}
-              type={el.type}
-              role={el.role}
-              imageFront={el.imageFront}
-            />
-          ))}
-        </div>
+        <Carousel data={search}></Carousel>
       ) : (
+        // <div className="grid grid-cols-4  justify-around">
+        //   {search.map((el) => (
+        //     <Card
+        //       key={el.id}
+        //       set={el.set}
+        //       name={el.name}
+        //       text={el.text}
+        //       type={el.type}
+        //       role={el.role}
+        //       imageFront={el.imageFront}
+        //     />
+        //   ))}
+        // </div>
         <Card
           set={search.set}
           name={search.name}
